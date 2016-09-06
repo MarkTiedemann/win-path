@@ -8,9 +8,17 @@
     "node": ">=6.0.0"
   },
   "keywords": [
-      "win",
-      "windows",
-      "path"
+    "win",
+    "windows",
+    "path"
   ],
-  "main": "index.js"
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkTiedemann/win-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarkTiedemann/win-path/issues"
+  },
+  "homepage": "https://github.com/MarkTiedemann/win-path"
 }
