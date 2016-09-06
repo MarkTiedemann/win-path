@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "name": "win-path",
+  "description": "Manipulate a Windows machine's PATH from Node.js.",
+  "license": "WTFPL",
+  "author": "Mark Tiedemann <www.marktiedemann@gmail.com>",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "keywords": [
+      "win",
+      "windows",
+      "path"
+  ],
+  "main": "index.js"
+}
