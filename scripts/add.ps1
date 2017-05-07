@@ -1,14 +1,14 @@
 
-param([string] $dir)
+param([string] $dir, [string] $target)
 
-$path = [System.Environment]::GetEnvironmentVariable('path', 'Machine')
+$path = [System.Environment]::GetEnvironmentVariable('path', $target)
 
 if (!($path.Contains("$dir;") -Or $path.EndsWith($dir)))
 {
     try 
     {
         $newPath = "$path;$dir"
-        [System.Environment]::SetEnvironmentVariable('path', $newPath, 'Machine')
+        [System.Environment]::SetEnvironmentVariable('path', $newPath, $target)
         return $newPath
     } 
     catch [System.Security.SecurityException] 

@@ -1,2 +1,4 @@
 
-return [System.Environment]::GetEnvironmentVariable('path', 'Machine')
+param([string] $target)
+
+return [System.Environment]::GetEnvironmentVariable('path', $target)

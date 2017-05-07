@@ -1,14 +1,14 @@
 
-param([string] $dir)
+param([string] $dir, [string] $target)
 
-$path = [System.Environment]::GetEnvironmentVariable('path', 'Machine')
+$path = [System.Environment]::GetEnvironmentVariable('path', $target)
 
 if ($path.Contains("$dir;"))
 {
     try 
     {
         $newPath = $path -Replace [Regex]::Escape("$dir;"), ''
-        [System.Environment]::SetEnvironmentVariable('path', $newPath, 'Machine')
+        [System.Environment]::SetEnvironmentVariable('path', $newPath, $target)
         return $newPath
     }  
     catch [System.Security.SecurityException] 
@@ -23,7 +23,7 @@ else
         try 
         {
             $newPath = $path.Substring(0, $path.Length - $dir.Length - 1)
-            [System.Environment]::SetEnvironmentVariable('path', $newPath, 'Machine')
+            [System.Environment]::SetEnvironmentVariable('path', $newPath, $target)
             return $newPath
         }  
         catch [System.Security.SecurityException] 
